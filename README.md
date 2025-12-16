@@ -1,2 +1,2 @@
 # HCI-Feedback-System
-Die Firma macht möglich
+Die Firma machts möglich
