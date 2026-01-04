@@ -1,0 +1,121 @@
+:root {
+    --bg-dark: oklch(0.1 0 50);
+    --bg: oklch(0.15 0 50);
+    --bg-light: oklch(0.2 0 50);
+    --text: oklch(0.96 0 50);
+    --text-muted: oklch(0.76 0 50);
+    --highlight: oklch(0.5 0 50);
+    --border: oklch(0.4 0 50);
+    --border-muted: oklch(0.3 0 50);
+    --primary: oklch(0.76 0.1 50);
+    --secondary: oklch(0.76 0.1 230);
+    --gap : 5%;
+    --card : oklch(0.15 0 50);
+    --btn: oklch(0.96 0 50);
+}
+
+
+* { box-sizing: border-box; }
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+
+
+.card{
+    width: min(420px, 100%);
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 0 25px var(--primary);
+}
+
+h1{
+    margin: 0 0 18px;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.field{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 12px 0;
+    background: var(--btn);
+}
+
+.field:focus-within{
+    border-color: var(--focus);
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+.icon{
+    width: 22px;
+    height: 22px;
+    display: grid;
+    place-items: center;
+    color: var(--highlight);
+    flex: 0 0 auto;
+}
+
+.icon svg{ width: 22px; height: 22px; }
+
+input{
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 2px 0;
+    background: transparent;
+    color: var(--highlight);
+}
+
+input::placeholder{ color: var(--highlight); }
+
+.actions{
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+button{
+    appearance: none;
+    border: 1px solid var(--btn);
+    background: var(--btn);
+    color: var(--highlight);
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.04s ease, opacity 0.2s ease;
+}
+button:active{ transform: translateY(1px); }
+button:hover{ opacity: 0.92; }
+
+.forgot{
+    margin-top: 16px;
+    font-size: 14px;
+}
+.forgot a{
+    color: var(--muted);
+    text-decoration: none;
+}
+.forgot a:hover{
+    color: var(--text);
+    text-decoration: underline;
+}

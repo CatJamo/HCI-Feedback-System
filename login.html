@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Seite</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+<main class="card">
+    <h1>Sign In</h1>
+
+    <form id="loginForm" autocomplete="on">
+      <div class="field">
+        <div class="icon" aria-hidden="true">
+          <!-- User Icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21a8 8 0 0 0-16 0"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <input id="username" name="username" type="text" placeholder="Nutzername" required />
+      </div>
+
+      <div class="field">
+        <div class="icon" aria-hidden="true">
+          <!-- Lock Icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="4" y="11" width="16" height="10" rx="2"></rect>
+            <path d="M8 11V8a4 4 0 0 1 8 0v3"></path>
+          </svg>
+        </div>
+        <input id="password" name="password" type="password" placeholder="Password" required />
+      </div>
+
+      <div class="actions">
+        <button type="submit">Login</button>
+        <button type="button" id="registerBtn">Registrieren</button>
+      </div>
+
+      <div class="forgot">
+        <a href="#" id="forgotLink">Passwort vergessen?</a>
+      </div>
+
+
+    </form>
+  </main>
+</body>
+</html>
