@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Seite</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="title">Meine Kurse:</div>
+        <div class="semester">
+          <span>Semester</span>
+          <select id="semesterSelect" aria-label="Semester auswählen">
+            <option value="WS25" selected>WS25</option>
+            <option value="SS26">SS26</option>
+            <option value="WS26">WS26</option>
+          </select>
+        </div>
+      </div>
+      <button class="logout" id="logoutBtn" type="button">Logout</button>
+    </header>
+
+    <section class="content">
+      <div class="grid" id="courseGrid">
+
+        <article class="card course-card">
+          <div>
+            <div class="course-name">HCI</div>
+            <div class="course-meta">Semester: <span class="semesterLabel">WS25</span></div>
+          </div>
+        </article>
+
+        <article class="card add-card" id="addCard" role="button" >
+          <div class="plus">+</div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+</body>
