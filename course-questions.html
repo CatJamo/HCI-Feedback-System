@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Fragen: HCI</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="back">✕</button>
+                <div class="title">Kurs Fragen</div>
+                <div class="title">HCI WS 25</div>
+            </div>
+        </header>
+        <section class="content">
+            <div class="add-circle" id="addBtn" role="button" tabindex="0" aria-label="Frage hinzufügen">
+            <span>+</span>
+            </div>
+
+            <div class="list" id="questionList">
+                <div class="q-card">
+                    <div class="q-text">Wie ist das Tempo?</div>
+                    <div class="q-actions">
+                    <button class="btn" type="button" data-action="evaluate">Auswerten</button>
+                    <button class="btn secondary" type="button" data-action="delete">Löschen</button>
+                    </div>
+                </div>
+            </div>
+            <div class="empty" id="emptyState">Noch keine Fragen. Klicke auf +, um eine Frage zu erstellen.</div>
+        </section>
+    </div>
+
+    <dialog id="createDialog">
+        <form method="dialog" class="dlg" id="createForm">
+            <h2>Neue Frage</h2>
+
+            <label for="questionInput">Frage</label>
+            <input id="questionInput" type="text" placeholder="z. B. Wie ist das Tempo?" required />
+
+            <div class="dlg-actions">
+            <button class="btn-flat" value="cancel" type="submit">Abbrechen</button>
+            <button class="btn-flat primary" id="confirmBtn" value="default" type="submit">Bestätigen</button>
+            </div>
+        </form>
+    </dialog>
+  
+</body>

@@ -152,6 +152,7 @@ select:focus{
 /* Auf kleinen Screens 1 Spalte */
 @media (max-width: 720px){
     .grid-my-courses{ grid-template-columns: 1fr; }
+    .grid-courses{ grid-template-columns: 1fr; }
 }
 
 .course-name{
@@ -280,4 +281,145 @@ button:hover{ opacity: 0.80; }
 .forgot a:hover{
     color: var(--text);
     text-decoration: underline;
+}
+
+.add-circle{
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--text);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 16px;
+    color: var(--bg);
+}
+.add-circle:hover{ border-color: var(--text); }
+.add-circle span{
+    font-size: 22px;
+    font-weight: 900;
+    transform: translateY(-1px);
+}
+
+/* Fragenliste */
+.list{
+    display: grid;
+    gap: 14px;
+}
+
+.q-card{
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.q-text{
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    flex: 1 1 420px;
+    min-width: 220px;
+}
+
+.q-actions{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.btn{
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-weight: 900;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.btn:hover{ opacity: 0.80; }
+
+.btn.secondary{
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+.empty{
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 2px;
+}
+
+/* Dialog Styles */
+dialog{
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 0;
+    width: min(520px, 94vw);
+    box-shadow: var(--shadow);
+}
+
+.dlg{
+    padding: 18px;
+    background: #fff;
+}
+
+.dlg h2{
+    margin: 0 0 12px;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.dlg label{
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.dlg input{
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+.dlg input:focus{
+    border-color: var(--text);
+    box-shadow: 0 0 0 4px rgba(17,24,39,0.12);
+}
+
+.dlg-actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.btn-flat{
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-weight: 900;
+    border: 1px solid var(--border);
+    background: #fff;
+    cursor: pointer;
+}
+.btn-flat.primary{
+    border-color: var(--text);
+    background: var(--text);
+    color: #fff;
 }
