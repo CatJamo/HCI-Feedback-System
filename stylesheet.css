@@ -65,6 +65,13 @@ body{
     background: var(--bg-light);
 }
 
+.topbar-right{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
 .topbar-left{
     display: flex;
     align-items: center;
@@ -103,7 +110,7 @@ select:focus{
 
 .logout{
     border: 1px solid var(--border);
-    background: #fff;
+    background: var(--text);
     border-radius: 10px;
     padding: 8px 12px;
     font-weight: 700;
@@ -111,6 +118,14 @@ select:focus{
 }
 .logout:hover{ opacity: 0.80; }
 
+.back{
+    border: 1px solid var(--border);
+    background: var(--text);
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
 .content{
     margin-top: 22px;
     min-height: calc(100vh - 120px);
@@ -120,17 +135,23 @@ select:focus{
     background: var(--bg-light);
 }
 
-/* 2 Spalten Grid: 3. Element geht automatisch in neue Zeile */
-.grid{
+.grid-my-courses{
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--gap);
     align-items: start;
 }
 
+.grid-courses{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap);
+    align-items: start;
+}
+
 /* Auf kleinen Screens 1 Spalte */
 @media (max-width: 720px){
-    .grid{ grid-template-columns: 1fr; }
+    .grid-my-courses{ grid-template-columns: 1fr; }
 }
 
 .course-name{
