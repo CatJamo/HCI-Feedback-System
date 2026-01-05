@@ -338,6 +338,42 @@ button:hover{ opacity: 0.80; }
     flex: 0 0 auto;
 }
 
+.q-scale{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.q-scale label{
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.q-scale input{
+  accent-color: #111827;
+  cursor: pointer;
+}
+
+.q-textarea{
+  width: 100%;
+  min-height: 90px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 15px;
+  resize: vertical;
+}
+
+.q-textarea:focus{
+  outline: none;
+  border-color: var(--border);
+  box-shadow: 0 0 0 4px rgba(17,24,39,0.12);
+}
+
 .btn{
     height: 40px;
     padding: 0 14px;
@@ -507,6 +543,50 @@ button:hover{ opacity: 0.80; }
 }
 
 .vote button:hover{ opacity: 0.80; }
+
+.center-row{
+    display:flex;
+    justify-content:center;
+    margin:6px 0 18px;
+}
+
+.primary-pill{
+    border:1px solid var(--border);
+    background:#fff;
+    border-radius:999px;
+    padding:10px 16px;
+    font-weight:900;
+    cursor:pointer;
+    width: 50%;
+}
+.primary-pill:hover{ opacity: 0.80; }
+
+/* Vorlesungen als große Pill-Buttons (links) */
+.lecture-list{
+    display:grid;
+    gap:14px;
+    align-content:start;
+    justify-items:center;
+}
+
+.lecture-pill{
+    border:1px solid var(--border);
+    background:#fff;
+    border-radius:999px;
+    padding:12px 18px;
+    font-weight:900;
+    cursor:pointer;
+    width: 80%;
+    text-align: center;
+}
+.lecture-pill:hover{ opacity: 0.80; }
+
+.subtle{
+    color:var(--text);
+    font-weight:800;
+    font-size:13px;
+    margin-top:8px;
+}
 
 /* Dialog Styles */
 dialog{
