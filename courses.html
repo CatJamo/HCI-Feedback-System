@@ -9,20 +9,19 @@
     <div class="page">
         <header class="topbar">
             <div class="topbar-left">
-                <button class="back">✕</button>
+                <button class="back" onclick="location.href='mycourse.html'">✕</button>
                 <div class="title">HCI</div>
                 <div class="title">WS 25</div>
             </div>
             <div class="topbar-right">
-                <button class="back">QR-Code</button>
-                <button class="back">Feedback</button>
-                <button class="back">Kurs fragen</button>
+                <button class="back" id="qrOpenBtn">QR-Code</button>
+                <button class="back" onclick="location.href='course-questions.html'">Kurs fragen</button>
             </div>
         </header>
         <section class="content">
         <div class="grid-courses" id="courseGrid">
 
-        <article class="card course-card">
+        <article class="card course-card" onclick="location.href='lessons.html'">
         <div>
             <div class="course-name">Vorlesung 01</div>
             <div class="course-meta">Grundlagen </div>
@@ -35,4 +34,28 @@
         </div>
         </section>
     </div>
+    
+    <dialog id="qrDialog">
+        <div class="dlg">
+            <h3>QR-CODE</h3>
+            <p>QR-Code-Platzhalter.</p>
+            <div class="dlg-actions">
+                <button class="btn primary" id="qrCloseBtn" type="button">Schließen</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        const qrOpenBtn = document.getElementById('qrOpenBtn');
+        const qrCloseBtn = document.getElementById('qrCloseBtn');
+        const qrDialog = document.getElementById('qrDialog');
+
+        qrOpenBtn.addEventListener('click', () => {
+            qrDialog.showModal();
+        });
+
+        qrCloseBtn.addEventListener('click', () => {
+            qrDialog.close();
+        });
+    </script>
 </body>

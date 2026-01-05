@@ -712,3 +712,68 @@ dialog{
     background: var(--text);
     color: #fff;
 }
+
+.open-dialog-btn{
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid #ccc;
+  background:#fff;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.feedback-dialog{
+  border:none;
+  border-radius:14px;
+  width:min(520px, 90vw);
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+  padding:0;
+}
+
+.dlg-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 16px;
+  border-bottom:1px solid #ddd;
+  background:#f9fafb;
+}
+
+.dlg-header h3{
+  margin:0;
+  font-size:18px;
+  font-weight:900;
+}
+
+.close-dialog-btn{
+  border:none;
+  background:none;
+  font-size:20px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.dlg-content{
+  padding:16px;
+  display:grid;
+  gap:12px;
+}
+
+.feedback-entry{
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:12px;
+  background:#fff;
+}
+
+.feedback-text{
+  font-weight:900;
+  margin-bottom:6px;
+}
+
+.feedback-votes{
+  display:flex;
+  gap:20px;
+  font-weight:900;
+  color:#555;
+}

@@ -9,7 +9,7 @@
     <div class="page">
         <header class="topbar">
             <div class="topbar-left">
-                <button class="back">✕</button>
+                <button class="back" onclick="location.href='courses.html'">✕</button>
                 <div class="title">Kurs Fragen</div>
                 <div class="title">HCI WS 25</div>
             </div>
@@ -33,18 +33,67 @@
         </section>
     </div>
 
-    <dialog id="createDialog">
-        <form method="dialog" class="dlg" id="createForm">
+    <dialog id="dialog">
+        <form class="dlg" method="dialog" id="form">
             <h2>Neue Frage</h2>
 
-            <label for="questionInput">Frage</label>
-            <input id="questionInput" type="text" placeholder="z. B. Wie ist das Tempo?" required />
+            <label>Fragetext</label>
+            <input id="qText" type="text" placeholder="Wie ist das Tempo?" required />
+
+            <label>Antwortformat</label>
+            <div class="format">
+                <label><input type="radio" name="type" value="text" checked> Freitext</label>
+                <label><input type="radio" name="type" value="scale"> Skalar (1-5)</label>
+            </div>
 
             <div class="dlg-actions">
-            <button class="btn-flat" value="cancel" type="submit">Abbrechen</button>
-            <button class="btn-flat primary" id="confirmBtn" value="default" type="submit">Bestätigen</button>
+                <button class="btn-flat" value="cancel">Abbrechen</button>
+                <button class="btn-flat primary" value="default">Bestätigen</button>
             </div>
         </form>
     </dialog>
-  
+    <script>
+        const dialog = document.getElementById('dialog');
+        const addBtn = document.getElementById('addBtn');
+        const questionList = document.getElementById('questionList');
+        const emptyState = document.getElementById('emptyState');
+        const form = document.getElementById('form');
+        const qText = document.getElementById('qText');
+        let questions = [];
+        function renderQuestions() {
+            questionList.innerHTML = '';
+            if (questions.length === 0) {
+                emptyState.style.display = 'block';
+            } else {
+                emptyState.style.display = 'none';
+                questions.forEach((q, index) => {
+                    const qCard = document.createElement('div');
+                    qCard.className = 'q-card';
+                    qCard.innerHTML = `
+                        <div class="q-text">${q.text}</div>
+                        <div class="q-actions">
+                            <button class="btn" type="button" data-action="evaluate" data-index="${index}">Auswerten</button>
+                            <button class="btn secondary" type="button" data-action="delete" data-index="${index}">Löschen</button>
+                        </div>
+                    `;
+                    questionList.appendChild(qCard);
+                });
+            }
+        }
+        addBtn.addEventListener('click', () => {
+            qText.value = '';
+            dialog.showModal();
+        });
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newQuestion = {
+                text: qText.value,
+                type: form.type.value
+            };
+            questions.push(newQuestion);
+            renderQuestions();
+            dialog.close();
+        });
+
+    </script>
 </body>

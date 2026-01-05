@@ -19,13 +19,13 @@
           </select>
         </div>
       </div>
-      <button class="logout" id="logoutBtn" type="button">Logout</button>
+      <button class="logout" id="logoutBtn" type="button" onclick="location.href='login.html'">Logout</button>
     </header>
 
     <section class="content">
       <div class="grid-my-courses" id="courseGrid">
 
-        <article class="card course-card">
+        <article class="card course-card" onclick="location.href='courses.html'">
           <div>
             <div class="course-name">HCI</div>
             <div class="course-meta">Semester: <span class="semesterLabel">WS25</span></div>
@@ -38,5 +38,19 @@
       </div>
     </section>
   </div>
+  <dialog id="addDialog">
+
+    <form method="dialog" class="dlg" id="addForm">
+      <h2>Kurs hinzufügen</h2>
+
+      <label for="courseName">Kursname</label>
+      <input id="courseName" name="courseName" type="text" placeholder="z. B. Mathe 1" required />
+
+      <div class="dlg-actions">
+        <button class="btn" value="cancel" type="submit">Abbrechen</button>
+        <button class="btn primary" id="createBtn" value="default" type="submit">Erstellen</button>
+      </div>
+    </form>
+  </dialog>
 
 </body>
