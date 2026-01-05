@@ -504,7 +504,6 @@ button:hover{ opacity: 0.80; }
     cursor: pointer;
     font-weight: 1000;
     color: var(--bg);
-    text-align: center;
 }
 
 .vote button:hover{ opacity: 0.80; }
