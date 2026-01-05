@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vorlesung 01 - Live Feedback</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="back">✕</button>
+                <div class="title">Vorlesung 01</div>
+                <div class="title">HCI</div>
+            </div>
+        </header>
+        <h2>Live Feedback</h2>
+        <section class="stats" aria-label="Zähler">
+            
+            <div class="stat">
+                <div class="tri" aria-hidden="true"></div>
+                <div class="stat-number" id="statLeft">67</div>
+            </div>
+            <div class="stat">
+                <div class="tri" aria-hidden="true"></div>
+                <div class="stat-number" id="statRight">42</div>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="split">
+                <!-- LEFT: Eingabe -->
+                <div class="pane">
+                <div class="section">
+                    <h3>Fragen stellen</h3>
+                    <textarea class="q-textarea" id="questionInput" placeholder="Schreibe deine Frage…"></textarea>
+                    <div class="send-row">
+                    <button class="send-btn" id="sendQuestionBtn" type="button">Senden</button>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Feedback geben</h3>
+                    <textarea class="q-textarea" id="feedbackInput" placeholder="Schreibe dein Feedback…"></textarea>
+                    <div class="send-row">
+                    <button class="send-btn" id="sendFeedbackBtn" type="button">Senden</button>
+                    </div>
+                </div>
+
+                </div>
+
+                <div class="divider" aria-hidden="true"></div>
+
+                <!-- RIGHT: Liste -->
+                <div class="pane">
+                <div class="right-title">
+                    <h3 style="margin:0;">Gestellte Fragen / Feedback</h3>
+                    <div class="right-sub">▲ / ▼ stimmen</div>
+                </div>
+
+                <div class="list" id="entryList">
+                    <div class="entry" data-id="">
+                    <div class="entry-text">Punkt 1 check ich nicht</div>
+
+                        <div class="vote-row">
+                            <div class="vote">
+                                <button type="button" data-action="up">▲</button>
+                                <span class="up-count">7</span>
+                            </div>
+                            <div class="vote">
+                                <button type="button" data-action="down">▼</button>
+                                <span class="down-count">1</span>
+                            </div>
+                        <span style="color:var(--highlight);font-weight:900;font-size:12px;">
+                        Frage
+                        </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="empty" id="emptyState">Noch keine Einträge.</div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
