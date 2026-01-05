@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vorlesung 01 HCI</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="back">✕</button>
+                <div class="title">Vorlesung 01</div>
+                <div class="title">HCI</div>
+            </div>
+            <div class="topbar-right">
+                <button class="back">QR-Code</button>
+                <div class="reset">
+                    <span>Reset Timer</span>
+                    <select id="resetSelect" aria-label="Reset Timer">
+                        <option value="never" selected>Nie</option>
+                        <option value="60">1 min</option>
+                        <option value="300">5 min</option>
+                        <option value="900">15 min</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <section class="stats" aria-label="Zähler">
+            <div class="stat">
+                <div class="tri" aria-hidden="true"></div>
+                <div class="stat-number" id="statLeft">67</div>
+            </div>
+            <div class="stat">
+                <div class="tri" aria-hidden="true"></div>
+                <div class="stat-number" id="statRight">42</div>
+            </div>
+        </section>
+
+
+        <section class="content">
+            <div class="split">
+            <!-- Fragen -->
+                <div class="pane">
+                <h2>Fragen</h2>
+
+                    <div class="item" data-type="question" data-id="q1">
+                        <div class="text-card">Punkt 1 check ich nicht</div>
+                        <button class="check-btn" type="button" aria-label="Frage erledigt" data-action="check">✓</button>
+
+                        <div class="votes">
+                            <div class="vote">
+                                <button type="button" data-action="up">▲</button>
+                                <span id="q1-up">3</span>
+                            </div>
+                            <div class="vote">
+                                <button type="button" data-action="down">▼</button>
+                                <span id="q1-down">1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="divider"></div>
+
+            <!-- Feedback -->
+                <div class="pane">
+                    <h2>Feedback</h2>
+
+                    <div class="item" data-type="feedback" data-id="f1">
+                        <div class="text-card">Zu Langsam</div>
+                        <button class="check-btn" type="button" aria-label="Feedback erledigt" data-action="check">✓</button>
+
+                        <div class="votes">
+                            <div class="vote">
+                                <button type="button" data-action="up">▲</button>
+                                <span id="f1-up">1</span>
+                            </div>
+                            <div class="vote">
+                                <button type="button" data-action="down">▼</button>
+                                <span id="f1-down">27</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
