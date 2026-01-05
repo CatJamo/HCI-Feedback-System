@@ -432,12 +432,18 @@ button:hover{ opacity: 0.80; }
     min-width: 120px;
 }
 
-.tri{
-    width: 0;
-    height: 0;
-    border-left: 28px solid transparent;
-    border-right: 28px solid transparent;
-    border-bottom: 48px solid var(--text); 
+.tri-up{
+    width:0;height:0;
+    border-left:28px solid transparent;
+    border-right:28px solid transparent;
+    border-bottom:48px solid var(--text);
+}
+
+.tri-down{
+    width:0;height:0;
+    border-left:28px solid transparent;
+    border-right:28px solid transparent;
+    border-top:48px solid var(--text);
 }
 
 .stat-number{
