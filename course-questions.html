@@ -34,7 +34,7 @@
     </div>
 
     <dialog id="dialog">
-        <form class="dlg" method="dialog" id="form">
+        <form class="dlg" method="dialog" id="addForm">
             <h2>Neue Frage</h2>
 
             <label>Fragetext</label>
@@ -42,58 +42,16 @@
 
             <label>Antwortformat</label>
             <div class="format">
-                <label><input type="radio" name="type" value="text" checked> Freitext</label>
-                <label><input type="radio" name="type" value="scale"> Skalar (1-5)</label>
+                <label style="text-align: center;">Freitext</label>
+                <input type="radio" name="type" value="text" checked>
+                <label style="text-align: center;">Skalar (1-5)</label>
+                <input type="radio" name="type" value="scale">
             </div>
-
             <div class="dlg-actions">
-                <button class="btn-flat" value="cancel">Abbrechen</button>
-                <button class="btn-flat primary" value="default">Bestätigen</button>
+                <button class="btn-flat" id="cancelBtn" value="cancel" type="submit">Abbrechen</button>
+                <button class="btn-flat primary" value="default" type="submit">Bestätigen</button>
             </div>
         </form>
     </dialog>
-    <script>
-        const dialog = document.getElementById('dialog');
-        const addBtn = document.getElementById('addBtn');
-        const questionList = document.getElementById('questionList');
-        const emptyState = document.getElementById('emptyState');
-        const form = document.getElementById('form');
-        const qText = document.getElementById('qText');
-        let questions = [];
-        function renderQuestions() {
-            questionList.innerHTML = '';
-            if (questions.length === 0) {
-                emptyState.style.display = 'block';
-            } else {
-                emptyState.style.display = 'none';
-                questions.forEach((q, index) => {
-                    const qCard = document.createElement('div');
-                    qCard.className = 'q-card';
-                    qCard.innerHTML = `
-                        <div class="q-text">${q.text}</div>
-                        <div class="q-actions">
-                            <button class="btn" type="button" data-action="evaluate" data-index="${index}">Auswerten</button>
-                            <button class="btn secondary" type="button" data-action="delete" data-index="${index}">Löschen</button>
-                        </div>
-                    `;
-                    questionList.appendChild(qCard);
-                });
-            }
-        }
-        addBtn.addEventListener('click', () => {
-            qText.value = '';
-            dialog.showModal();
-        });
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const newQuestion = {
-                text: qText.value,
-                type: form.type.value
-            };
-            questions.push(newQuestion);
-            renderQuestions();
-            dialog.close();
-        });
-
-    </script>
+    <script src="course-questions.js"></script>
 </body>

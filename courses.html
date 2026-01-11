@@ -21,16 +21,18 @@
         <section class="content">
         <div class="grid-courses" id="courseGrid">
 
-        <article class="card course-card" onclick="location.href='lessons.html'">
-        <div>
-            <div class="course-name">Vorlesung 01</div>
-            <div class="course-meta">Grundlagen </div>
-            </div>
+            <article class="card add-card" id="addCard" role="button" >
+                <div class="plus">+</div>
             </article>
 
-            <article class="card add-card" id="addCard" role="button" >
-            <div class="plus">+</div>
+            <article class="card course-card" onclick="location.href='lessons.html'">
+                <div>
+                    <div class="course-name">Vorlesung 01</div>
+                    <div class="course-meta">Grundlagen </div>
+                </div>
             </article>
+
+            
         </div>
         </section>
     </div>
@@ -45,17 +47,21 @@
         </div>
     </dialog>
 
-    <script>
-        const qrOpenBtn = document.getElementById('qrOpenBtn');
-        const qrCloseBtn = document.getElementById('qrCloseBtn');
-        const qrDialog = document.getElementById('qrDialog');
+    <dialog id="addDialog">
 
-        qrOpenBtn.addEventListener('click', () => {
-            qrDialog.showModal();
-        });
+        <form method="dialog" class="dlg" id="addForm">
+        <h2>Kurs hinzufügen</h2>
 
-        qrCloseBtn.addEventListener('click', () => {
-            qrDialog.close();
-        });
-    </script>
+        <label for="lessonName">Kursname</label>
+        <input id="lessonName" name="lessonName" type="text" placeholder="z. B. Mathe 1" required />
+        <label for="lessonDescription">Beschreibung</label>
+        <input id="lessonDescription" name="lessonDescription" type="text" placeholder="z. B. Grundlagen der Analysis" required />
+        <div class="dlg-actions">
+            <button class="btn" id="cancelBtn" value="cancel" type="submit">Abbrechen</button>
+            <button class="btn primary" id="createBtn" value="default" type="submit">Erstellen</button>
+        </div>
+        </form>
+    </dialog>
+
+<script src="courses.js"></script>
 </body>

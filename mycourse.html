@@ -25,6 +25,10 @@
     <section class="content">
       <div class="grid-my-courses" id="courseGrid">
 
+        <article class="card add-card" id="addCard" role="button" >
+          <div class="plus">+</div>
+        </article>
+
         <article class="card course-card" onclick="location.href='courses.html'">
           <div>
             <div class="course-name">HCI</div>
@@ -32,9 +36,6 @@
           </div>
         </article>
 
-        <article class="card add-card" id="addCard" role="button" >
-          <div class="plus">+</div>
-        </article>
       </div>
     </section>
   </div>
@@ -45,12 +46,17 @@
 
       <label for="courseName">Kursname</label>
       <input id="courseName" name="courseName" type="text" placeholder="z. B. Mathe 1" required />
-
+      <label for="courseSemester">Semester</label>
+      <select id="courseSemester" name="courseSemester" required>
+        <option value="WS25" selected>WS25</option>
+        <option value="SS26">SS26</option>
+        <option value="WS26">WS26</option>
+      </select>
       <div class="dlg-actions">
-        <button class="btn" value="cancel" type="submit">Abbrechen</button>
+        <button class="btn" id="cancelBtn" value="cancel" type="submit">Abbrechen</button>
         <button class="btn primary" id="createBtn" value="default" type="submit">Erstellen</button>
       </div>
     </form>
   </dialog>
-
+<script src="mycourse.js"></script>
 </body>
