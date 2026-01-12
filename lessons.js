@@ -3,7 +3,11 @@ const qrCloseBtn = document.getElementById("qrCloseBtn");
 const qrDialog = document.getElementById("qrDialog");
 const statleft = document.getElementById("statLeft");
 const statright = document.getElementById("statRight");
-const resetSelect = document.getElementById("resetSelect");
+const reset = document.getElementById("reset");
+const questionList = document.getElementById("questionList");
+const feedbackList = document.getElementById("feedbackList");
+
+
 qrOpenBtn.addEventListener("click", () => {
     qrDialog.showModal();
 });
@@ -11,21 +15,47 @@ qrCloseBtn.addEventListener("click", () => {
     qrDialog.close();
 });
 
-function timerFunction(timer) {
-    if (isNaN(timer) || timer < 0) return;
-    setTimeout(() => {
-        statleft.innerHTML = "0";
-        statright.innerHTML = "0";
-    }, timer);
-}
-
-resetSelect.addEventListener("change", () => {
-    const value = resetSelect.value;
-    if (value === "never") return;
-    statleft.innerHTML = value;
-    timerFunction(value * 1000);
+reset.addEventListener("click", () => {
+    statleft.textContent = "0";
+    statright.textContent = "0";
 });
 
+questionList.addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    const action = btn?.dataset?.action;
+    const card = e.target.closest(".item");
+    if (!action) return;
+    if (action === "up") {
+        const upSpan = e.target.closest(".vote").querySelector("span");
+        const currentCount = parseInt(upSpan.textContent);
+        upSpan.textContent = currentCount + 1;
+    } else if (action === "down") {
+        const downSpan = e.target.closest(".vote").querySelector("span");
+        const currentCount = parseInt(downSpan.textContent);
+        downSpan.textContent = currentCount + 1;
+    }else if (action === "check") {
+        const textDiv = card.querySelector(".text-card");
+        textDiv.style.textDecoration = "line-through";
+        btn.style.color = "green";
+    }
+});
 
-
-
+feedbackList.addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    const action = btn?.dataset?.action;
+    const card = e.target.closest(".item");
+    if (!action) return;
+    if (action === "up") {
+        const upSpan = e.target.closest(".vote").querySelector("span");
+        const currentCount = parseInt(upSpan.textContent);
+        upSpan.textContent = currentCount + 1;
+    } else if (action === "down") {
+        const downSpan = e.target.closest(".vote").querySelector("span");
+        const currentCount = parseInt(downSpan.textContent);
+        downSpan.textContent = currentCount + 1;
+    }else if (action === "check") {
+        const textDiv = card.querySelector(".text-card");
+        textDiv.style.textDecoration = "line-through";
+        btn.style.color = "green";
+    }
+});

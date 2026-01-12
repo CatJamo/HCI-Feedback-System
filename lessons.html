@@ -15,15 +15,7 @@
             </div>
             <div class="topbar-right">
                 <button class="back" id="qrOpenBtn">QR-Code</button>
-                <div class="reset"
-                    <span>Reset Timer</span>
-                    <select id="resetSelect" aria-label="Reset Timer">
-                        <option value="never" selected>Nie</option>
-                        <option value="60">1 min</option>
-                        <option value="300">5 min</option>
-                        <option value="900">15 min</option>
-                    </select>
-                </div>
+                <button class="back" id="reset">Reset Counter</button>
             </div>
         </header>
 
@@ -42,7 +34,7 @@
         <section class="content">
             <div class="split">
             <!-- Fragen -->
-                <div class="pane">
+                <div class="pane" id="questionList">
                 <h2>Fragen</h2>
 
                     <div class="item" data-type="question" data-id="q1">
@@ -66,7 +58,7 @@
                 <div class="divider"></div>
 
             <!-- Feedback -->
-                <div class="pane">
+                <div class="pane" id="feedbackList">
                     <h2>Feedback</h2>
 
                     <div class="item" data-type="feedback" data-id="f1">
