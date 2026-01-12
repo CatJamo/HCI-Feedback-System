@@ -1,2 +1,2 @@
 # HCI-Feedback-System
-Die Firma machts möglich - oder auch nicht!?
+Die Firma machts möglich - oder auch nicht?
