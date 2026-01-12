@@ -18,11 +18,11 @@
         <section class="stats" aria-label="Zähler">
             
             <div class="stat">
-                <div class="tri-up" aria-hidden="true"></div>
+                <div class="tri-up" id="statLeftButton" aria-hidden="true" style="cursor: pointer;" role="button"></div>
                 <div class="stat-number" id="statLeft">67</div>
             </div>
             <div class="stat">
-                <div class="tri-down" aria-hidden="true"></div>
+                <div class="tri-down" id="statRightButton" aria-hidden="true" style="cursor: pointer;" role="button"></div>
                 <div class="stat-number" id="statRight">42</div>
             </div>
         </section>
@@ -83,75 +83,5 @@
             </div>
         </section>
     </div>
-    <script>
-        function newQuestion(text) {
-            const entryList = document.getElementById('entryList');
-            const emptyState = document.getElementById('emptyState');
-
-            const entry = document.createElement('div');
-            entry.className = 'entry';
-            entry.innerHTML = `
-                <div class="entry-text">${text}</div>
-                <div class="vote-row">
-                    <div class="vote">
-                        <button type="button" data-action="up">▲</button>
-                        <span class="up-count">0</span>
-                    </div>
-                    <div class="vote">
-                        <button type="button" data-action="down">▼</button>
-                        <span class="down-count">0</span>
-                    </div>
-                    <span style="color:var(--highlight);font-weight:900;font-size:12px;">
-                    Frage
-                    </span>
-                </div>
-            `;
-            entryList.appendChild(entry);
-            emptyState.style.display = 'none';
-        }
-
-        function newFeedback(text) {
-            const entryList = document.getElementById('entryList');
-            const emptyState = document.getElementById('emptyState');
-
-            const entry = document.createElement('div');
-            entry.className = 'entry';
-            entry.innerHTML = `
-                <div class="entry-text">${text}</div>
-                <div class="vote-row">
-                    <div class="vote">
-                        <button type="button" data-action="up">▲</button>
-                        <span class="up-count">0</span>
-                    </div>
-                    <div class="vote">
-                        <button type="button" data-action="down">▼</button>
-                        <span class="down-count">0</span>
-                    </div>
-                    <span style="color:var(--highlight);font-weight:900;font-size:12px;">
-                    Feedback
-                    </span>
-                </div>
-            `;
-            entryList.appendChild(entry);
-            emptyState.style.display = 'none';
-        }
-
-        document.getElementById('sendQuestionBtn').addEventListener('click', () => {
-            const questionInput = document.getElementById('questionInput');
-            const text = questionInput.value.trim();
-            if (text) {
-                newQuestion(text);
-                questionInput.value = '';
-            }
-        });
-
-        document.getElementById('sendFeedbackBtn').addEventListener('click', () => {
-            const feedbackInput = document.getElementById('feedbackInput');
-            const text = feedbackInput.value.trim();
-            if (text) {
-                newFeedback(text);
-                feedbackInput.value = '';
-            }
-        });
-    </script>
+    <script src="stu-lessons.js"></script>
 </body>
