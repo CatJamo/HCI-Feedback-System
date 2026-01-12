@@ -9,9 +9,9 @@
     <div class="page">
         <header class="topbar">
             <div class="topbar-left">
-                <button class="back" onclick="location.href='stu-courses.html'">✕</button>
-                <div class="title">Vorlesung 01</div>
-                <div class="title">HCI</div>
+                <button class="back" id="backBtn" type="button">✕</button>
+                <div class="title" id="lessonTitle">Vorlesung 01</div>
+                <div class="title" id="courseTitle">HCI</div>
             </div>
         </header>
         <h2>Live Feedback</h2>
@@ -33,7 +33,7 @@
                 <div class="pane">
                 <div class="section">
                     <h3>Fragen stellen</h3>
-                    <textarea class="q-textarea" id="questionInput" placeholder="Schreibe deine Frage…"></textarea>
+                    <textarea class="q-textarea" id="questionInput" placeholder="Schreibe deine Frage"></textarea>
                     <div class="send-row">
                     <button class="send-btn" id="sendQuestionBtn" type="button">Senden</button>
                     </div>
@@ -41,7 +41,7 @@
 
                 <div class="section">
                     <h3>Feedback geben</h3>
-                    <textarea class="q-textarea" id="feedbackInput" placeholder="Schreibe dein Feedback…"></textarea>
+                    <textarea class="q-textarea" id="feedbackInput" placeholder="Schreibe dein Feedback"></textarea>
                     <div class="send-row">
                     <button class="send-btn" id="sendFeedbackBtn" type="button">Senden</button>
                     </div>
@@ -58,30 +58,12 @@
                     <div class="right-sub">▲ / ▼ stimmen</div>
                 </div>
 
-                <div class="list" id="entryList">
-                    <div class="entry" data-id="">
-                    <div class="entry-text">Punkt 1 check ich nicht</div>
-
-                        <div class="vote-row">
-                            <div class="vote">
-                                <button type="button" data-action="up">▲</button>
-                                <span class="up-count">7</span>
-                            </div>
-                            <div class="vote">
-                                <button type="button" data-action="down">▼</button>
-                                <span class="down-count">1</span>
-                            </div>
-                        <span style="color:var(--highlight);font-weight:900;font-size:12px;">
-                        Frage
-                        </span>
-                        </div>
-                    </div>
-                </div>
+                <div class="list" id="entryList"></div>
                 <div class="empty" id="emptyState">Noch keine Einträge.</div>
-
                 </div>
             </div>
         </section>
     </div>
+    <script src="db.js"></script>
     <script src="stu-lessons.js"></script>
 </body>

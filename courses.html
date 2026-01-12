@@ -10,12 +10,12 @@
         <header class="topbar">
             <div class="topbar-left">
                 <button class="back" onclick="location.href='mycourse.html'">✕</button>
-                <div class="title">HCI</div>
-                <div class="title">WS 25</div>
+                <div class="title" id="courseTitle">HCI</div>
+                <div class="title" id="courseSemester">WS 25</div>
             </div>
             <div class="topbar-right">
                 <button class="back" id="qrOpenBtn">QR-Code</button>
-                <button class="back" onclick="location.href='course-questions.html'">Kurs fragen</button>
+                <button class="back" id="courseQuestionsBtn" type="button">Kurs fragen</button>
             </div>
         </header>
         <section class="content">
@@ -40,7 +40,8 @@
     <dialog id="qrDialog">
         <div class="dlg">
             <h3>QR-CODE</h3>
-            <p>QR-Code-Platzhalter.</p>
+            <p>Link zur Studierendenansicht:</p>
+            <p><a id="qrCourseLink" href="#">Öffnen</a></p>
             <div class="dlg-actions">
                 <button class="btn primary" id="qrCloseBtn" type="button">Schließen</button>
             </div>
@@ -63,5 +64,6 @@
         </form>
     </dialog>
 
+<script src="db.js"></script>
 <script src="courses.js"></script>
 </body>
