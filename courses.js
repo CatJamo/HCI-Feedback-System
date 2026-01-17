@@ -2,6 +2,7 @@ const qrOpenBtn = document.getElementById("qrOpenBtn");
 const qrCloseBtn = document.getElementById("qrCloseBtn");
 const qrDialog = document.getElementById("qrDialog");
 const qrCourseLink = document.getElementById("qrCourseLink");
+const qrCourseImage = document.getElementById("qrCourseImage");
 const courseTitle = document.getElementById("courseTitle");
 const courseSemester = document.getElementById("courseSemester");
 const courseQuestionsBtn = document.getElementById("courseQuestionsBtn");
@@ -91,6 +92,7 @@ async function loadLessons() {
   courseSemester.textContent = course.semester;
   qrCourseLink.href = `stu-courses.html?courseId=${encodeURIComponent(course.id)}`;
   qrCourseLink.textContent = qrCourseLink.href;
+  qrCourseImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(qrCourseLink.href)}`;
 
   const res = await dbFind({ type: "lesson", courseId: course.id });
   const existingAddCard = addBtn;

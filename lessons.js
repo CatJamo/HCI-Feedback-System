@@ -2,6 +2,7 @@ const qrOpenBtn = document.getElementById("qrOpenBtn");
 const qrCloseBtn = document.getElementById("qrCloseBtn");
 const qrDialog = document.getElementById("qrDialog");
 const qrLessonLink = document.getElementById("qrLessonLink");
+const qrLessonImage = document.getElementById("qrLessonImage");
 const lessonTitle = document.getElementById("lessonTitle");
 const courseTitle = document.getElementById("courseTitle");
 const statLeft = document.getElementById("statLeft");
@@ -108,6 +109,7 @@ async function loadLessonData() {
   courseTitle.textContent = course.name;
   qrLessonLink.href = `stu-lessons.html?courseId=${encodeURIComponent(course.id)}&lessonId=${encodeURIComponent(lesson.id)}`;
   qrLessonLink.textContent = qrLessonLink.href;
+  qrLessonImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(qrLessonLink.href)}`;
 
   const statsId = `lesson_stats:${lesson.id}`;
   const statsRes = await dbGetDoc(statsId);

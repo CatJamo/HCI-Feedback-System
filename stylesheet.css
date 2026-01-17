@@ -826,3 +826,13 @@ dialog{
   font-weight:900;
   color:#444;
 }
+
+.qr-image{
+  display:block;
+  width:180px;
+  height:180px;
+  margin:12px auto;
+  border-radius:12px;
+  border:1px solid #ddd;
+  background:#fff;
+}
