@@ -174,4 +174,28 @@ async function loadLesson() {
   }
 }
 
+async function refreshStats() {
+  const statsRes = await dbGetDoc(`lesson_stats:${lessonId}`);
+  if (statsRes.ok) {
+    statLeft.textContent = statsRes.data.up || 0;
+    statRight.textContent = statsRes.data.down || 0;
+  }
+}
+
+async function refreshEntries() {
+  const entriesRes = await dbFind({ type: "lesson_entry", lessonId });
+  if (entriesRes.ok && Array.isArray(entriesRes.data.docs)) {
+    const sorted = entriesRes.data.docs.slice().sort((a, b) => {
+      const aTime = a.createdAt ? Date.parse(a.createdAt) : 0;
+      const bTime = b.createdAt ? Date.parse(b.createdAt) : 0;
+      return aTime - bTime;
+    });
+    entryList.innerHTML = "";
+    sorted.forEach((entry) => renderEntry(entry));
+    updateEmptyState();
+  }
+}
+
 loadLesson();
+setInterval(refreshStats, 1500);
+setInterval(refreshEntries, 4000);

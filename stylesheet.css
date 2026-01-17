@@ -783,3 +783,46 @@ dialog{
   font-weight:900;
   color:#555;
 }
+
+.bar-chart{
+  display:grid;
+  gap:10px;
+  margin-top:12px;
+}
+
+.bar-row{
+  display:grid;
+  grid-template-columns: 20px 1fr 32px;
+  align-items:center;
+  gap:10px;
+}
+
+.bar-label{
+  font-weight:900;
+  color:#444;
+}
+
+.bar-track{
+  height:10px;
+  background:#eee;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.bar-fill{
+  height:100%;
+  background:var(--highlight);
+  border-radius:999px;
+}
+
+.bar-value{
+  text-align:right;
+  font-weight:900;
+  color:#444;
+}
+
+.bar-meta{
+  margin-top:8px;
+  font-weight:900;
+  color:#444;
+}

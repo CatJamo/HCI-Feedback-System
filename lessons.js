@@ -69,6 +69,39 @@ function resetList(container, titleText) {
   container.appendChild(title);
 }
 
+async function refreshStats() {
+  const statsId = `lesson_stats:${lesson.id}`;
+  const statsRes = await dbGetDoc(statsId);
+  if (statsRes.ok) {
+    statLeft.textContent = statsRes.data.up || 0;
+    statRight.textContent = statsRes.data.down || 0;
+  }
+}
+
+function renderEntries(entries) {
+  resetList(questionList, "Fragen");
+  resetList(feedbackList, "Feedback");
+  entries.forEach((entry) => {
+    if (entry.kind === "feedback") {
+      renderEntry(entry, feedbackList);
+    } else {
+      renderEntry(entry, questionList);
+    }
+  });
+}
+
+async function refreshEntries() {
+  const res = await dbFind({ type: "lesson_entry", lessonId: lesson.id });
+  if (res.ok && Array.isArray(res.data.docs)) {
+    const sorted = res.data.docs.slice().sort((a, b) => {
+      const aTime = a.createdAt ? Date.parse(a.createdAt) : 0;
+      const bTime = b.createdAt ? Date.parse(b.createdAt) : 0;
+      return aTime - bTime;
+    });
+    renderEntries(sorted);
+  }
+}
+
 async function loadLessonData() {
   await ensureDb();
   lessonTitle.textContent = lesson.name;
@@ -94,19 +127,9 @@ async function loadLessonData() {
     statRight.textContent = "0";
   }
 
-  resetList(questionList, "Fragen");
-  resetList(feedbackList, "Feedback");
-
-  const res = await dbFind({ type: "lesson_entry", lessonId: lesson.id });
-  if (res.ok && Array.isArray(res.data.docs)) {
-    res.data.docs.forEach((entry) => {
-      if (entry.kind === "feedback") {
-        renderEntry(entry, feedbackList);
-      } else {
-        renderEntry(entry, questionList);
-      }
-    });
-  }
+  await refreshEntries();
+  setInterval(refreshStats, 1500);
+  setInterval(refreshEntries, 4000);
 }
 
 async function handleEntryAction(event, container) {
