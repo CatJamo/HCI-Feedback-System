@@ -38,7 +38,7 @@
     </div>
     
     <dialog id="qrDialog">
-        <div class="dlg">
+        <div class="dlg qr-dlg">
             <h3>QR-CODE</h3>
             <p>Link zur Studierendenansicht:</p>
             <img id="qrCourseImage" class="qr-image" alt="QR-Code Kurslink" />
@@ -55,9 +55,9 @@
         <h2>Kurs hinzufügen</h2>
 
         <label for="lessonName">Kursname</label>
-        <input id="lessonName" name="lessonName" type="text" placeholder="z. B. Mathe 1" required />
+        <input id="lessonName" name="lessonName" type="text" placeholder="z. B. Vorlesung 01" required />
         <label for="lessonDescription">Beschreibung</label>
-        <input id="lessonDescription" name="lessonDescription" type="text" placeholder="z. B. Grundlagen der Analysis" required />
+        <input id="lessonDescription" name="lessonDescription" type="text" placeholder="z. B. Einführung in den Kurs" required />
         <div class="dlg-actions">
             <button class="btn" id="cancelBtn" value="cancel" type="submit">Abbrechen</button>
             <button class="btn primary" id="createBtn" value="default" type="submit">Erstellen</button>

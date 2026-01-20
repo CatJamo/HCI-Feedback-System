@@ -90,7 +90,7 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--muted);
+    color: var(--text-muted);
     font-weight: 600;
 }
 
@@ -164,7 +164,7 @@ select:focus{
 }
 
 .course-meta{
-    color: var(--muted);
+    color: var(--text-muted);
     font-weight: 600;
     font-size: 14px;
     white-space: nowrap;
@@ -507,12 +507,15 @@ button:hover{ opacity: 0.80; }
 .check-btn{
     width: 44px;
     height: 44px;
+    padding: 0;
     border-radius: 10px;
     border: 1px solid var(--border);
     background: var(--text);
     cursor: pointer;
     display: grid;
     place-items: center;
+    line-height: 1;
+    text-align: center;
     font-weight: 1000;
     font-size: 18px;
     color: var(--bg);
@@ -530,7 +533,7 @@ button:hover{ opacity: 0.80; }
     align-items: center;
     gap: 22px;
     padding-left: 6px;
-    color: var(--muted);
+    color: var(--text-muted);
     font-weight: 900;
     user-select: none;
     flex-wrap: wrap;
@@ -540,6 +543,7 @@ button:hover{ opacity: 0.80; }
 .vote{
     display: inline-flex;
     align-items: center;
+    text-align: center;
     gap: 8px;
     
 }
@@ -547,12 +551,19 @@ button:hover{ opacity: 0.80; }
 .vote button{
     width: 36px;
     height: 36px;
+    padding: 0;
     border-radius: 10px;
     border: 1px solid var(--border);
     background: var(--text);
     cursor: pointer;
+    display: grid;
+    place-items: center;
+    line-height: 1;
+    text-align: center;
     font-weight: 1000;
     color: var(--bg);
+    margin-right: 10%;
+
 }
 
 .vote button:hover{ opacity: 0.80; }
@@ -657,6 +668,11 @@ button:hover{ opacity: 0.80; }
     word-break:break-word;
 }
 
+.primary {
+    background-color: var(--primary);
+    color: var(--text);
+}
+
 /* Dialog Styles */
 dialog{
     border: 1px solid var(--border);
@@ -667,19 +683,20 @@ dialog{
 
 .dlg{
     padding: 18px;
-    background: #fff;
+    background: var(--bg);
 }
 
 .dlg h2{
     margin: 0 0 12px;
     font-size: 18px;
     font-weight: 900;
+    color: var(--text);
 }
 
 .dlg label{
     display: block;
     font-size: 13px;
-    color: var(--muted);
+    color: var(--text);
     font-weight: 800;
     margin-bottom: 6px;
 }
@@ -694,7 +711,7 @@ dialog{
 }
 
 .dlg input:focus{
-    border-color: var(--text);
+    border-color: var(--primary);
     box-shadow: 0 0 0 4px rgba(17,24,39,0.12);
 }
 
@@ -710,20 +727,20 @@ dialog{
     padding: 10px 12px;
     font-weight: 900;
     border: 1px solid var(--border);
-    background: #fff;
+    background: var(--text);
     cursor: pointer;
 }
 .btn-flat.primary{
-    border-color: var(--text);
-    background: var(--text);
+    border-color: var(--primary);
+    background: var(--primary);
     color: #fff;
 }
 
 .open-dialog-btn{
   padding:10px 16px;
   border-radius:999px;
-  border:1px solid #ccc;
-  background:#fff;
+  border:1px solid var(--border);
+  background:var(--text);
   font-weight:900;
   cursor:pointer;
 }
@@ -766,10 +783,10 @@ dialog{
 }
 
 .feedback-entry{
-  border:1px solid #ddd;
+  border:1px solid var(--border);
   border-radius:12px;
   padding:12px;
-  background:#fff;
+  background:var(--text);
 }
 
 .feedback-text{
@@ -833,6 +850,10 @@ dialog{
   height:180px;
   margin:12px auto;
   border-radius:12px;
-  border:1px solid #ddd;
-  background:#fff;
+  border:1px solid var(--border);
+  background-color: var(--text);
+}
+
+.qr-dlg {
+    background-color: var(--text);
 }
