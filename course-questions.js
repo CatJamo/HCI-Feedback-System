@@ -103,6 +103,7 @@ function renderAnswers(questionId, answers) {
   const question = questions.find((item) => item._id === questionId);
   const title = document.createElement("h3");
   title.textContent = question ? question.text : "Auswertung";
+  title.setAttribute("style", "color: var(--text);");
   answerList.appendChild(title);
 
   const filtered = answers.filter((answer) => answer.questionId === questionId);

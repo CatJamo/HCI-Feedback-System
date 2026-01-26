@@ -329,6 +329,7 @@ button:hover{ opacity: 0.80; }
     letter-spacing: -0.01em;
     flex: 1 1 420px;
     min-width: 220px;
+    color: var(--text);
 }
 
 .q-actions{
@@ -816,7 +817,7 @@ dialog{
 
 .bar-label{
   font-weight:900;
-  color:#444;
+  color:var(--text);
 }
 
 .bar-track{
@@ -828,20 +829,20 @@ dialog{
 
 .bar-fill{
   height:100%;
-  background:var(--highlight);
+  background:var(--primary);
   border-radius:999px;
 }
 
 .bar-value{
   text-align:right;
   font-weight:900;
-  color:#444;
+  color:var(--text);
 }
 
 .bar-meta{
   margin-top:8px;
   font-weight:900;
-  color:#444;
+  color:var(--text);
 }
 
 .qr-image{
